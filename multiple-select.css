@@ -189,12 +189,24 @@
     white-space: nowrap;
 }
 
-.ms-drop ul > li label.optgroup {
-    font-weight: bold;
+.ms-drop ul > li label > span{
+  margin-left: 5px;
 }
+
+.ms-drop ul > li label.optgroup {
+  font-weight: bold;
+  background: #cdcdcd;
+}
+
+.ms-drop ul > li label.optgroup > span {
+  font-size: 16px;
+}
+
 
 .ms-drop input[type="checkbox"] {
     vertical-align: middle;
+    margin-top: -2px;
+    padding-right: 2px;
 }
 
 .ms-drop .ms-no-results {

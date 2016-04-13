@@ -296,7 +296,7 @@
                     this.options.hideOptgroupCheckboxes || this.options.single ? '' :
                         sprintf('<input type="checkbox" %s %s>',
                         this.selectGroupName, disabled ? 'disabled="disabled"' : ''),
-                    label,
+                    '<span>' + label + '</span>',
                     '</label>',
                     '</li>'
                 ].join(''));
