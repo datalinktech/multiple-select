@@ -148,6 +148,7 @@
         this.$choice = $(sprintf([
                 '<button type="button" class="ms-choice">',
                 '<span class="placeholder">%s</span>',
+                '<i class="clear fa fa-times-circle fa-lg"></i>',
                 '<div></div>',
                 '</button>'
             ].join(''),
