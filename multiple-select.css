@@ -161,6 +161,10 @@
     float: left;
 }
 
+.ms-drop ul > li.multiple.selected {
+    background: #e7fd05;
+}
+
 .ms-drop ul > li.group {
     clear: both;
 }
