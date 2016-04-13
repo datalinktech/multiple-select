@@ -144,15 +144,20 @@
             $el.attr('class') || '',
             sprintf('title="%s"', $el.attr('title'))));
 
+        this.$clearChosen = $('<i class="clear fa fa-times-circle fa-lg"></i>');
+
         // add placeholder to choice button
         this.$choice = $(sprintf([
                 '<button type="button" class="ms-choice">',
                 '<span class="placeholder">%s</span>',
-                '<i class="clear fa fa-times-circle fa-lg"></i>',
                 '<div></div>',
                 '</button>'
             ].join(''),
             this.options.placeholder));
+
+        if(this.options.clearChosenButton){
+          this.$choice.find('span').after(this.$clearChosen);
+        }
 
         // default position is bottom
         this.$drop = $(sprintf('<div class="ms-drop %s"%s></div>',
@@ -326,6 +331,10 @@
             this.$choice.off('click').on('click', toggleOpen)
                 .off('focus').on('focus', this.options.onFocus)
                 .off('blur').on('blur', this.options.onBlur);
+
+            this.$clearChosen.on('click', function(e){
+              that.uncheckAll();
+            });
 
             this.$parent.off('keydown').on('keydown', function (e) {
                 switch (e.which) {
@@ -736,6 +745,7 @@
         addTitle: false,
         filterAcceptOnEnter: false,
         hideOptgroupCheckboxes: false,
+        clearChosenButton: false,
 
         selectAllText: 'Select all',
         allSelected: 'All selected',
